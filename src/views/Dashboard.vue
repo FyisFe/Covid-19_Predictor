@@ -116,10 +116,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
     .dashboard {
-        font-size: 1vw;
-        width: 100vw;
+        font-size: 11px;
     }
-
+    @media(min-width: 990px) {
+        .dashboard {
+            font-size: 1vw;
+        }
+    }
     .dashboard-navbar {
         background: #27293d;
         border-bottom: 1px solid #353a53;
@@ -161,13 +164,13 @@
     }
 
     #sidebar-wrapper {
-        width: 18%;
+        width: 15rem;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         padding: 0.6rem 1.25rem;
         background-color: #27293d;
         min-height: 100vh;
-        margin-left: -20rem;
+        margin-left: -15rem;
         border-right: 1px solid #353a53;
         -webkit-transition: margin .25s ease-out;
         -moz-transition: margin .25s ease-out;
@@ -299,7 +302,6 @@
     }
 
     #page-content-wrapper {
-        min-width: 100vw;
         padding: 1.25rem;
         width: 100%;
     }
@@ -319,7 +321,7 @@
         }
 
         #main-body.toggled #sidebar-wrapper {
-            margin-left: -20rem;
+            margin-left: -15rem;
         }
     }
 </style>

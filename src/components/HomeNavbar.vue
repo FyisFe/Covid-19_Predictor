@@ -48,6 +48,12 @@
         font-size: 1.25vw;
     }
 
+    @media (max-width: 768px) {
+         .home-navbar .nav-brand-text {
+             font-size: 1rem;
+         }
+    }
+
     .home-navbar .text-heavier {
         font-weight: 500;
     }
@@ -67,7 +73,7 @@
     .home-navbar .navbar-dark .navbar-nav .nav-link {
         color: #ffffffCC !important;
         padding-right: 2rem;
-        font-size: 1vw;
+        font-size: .8rem;
     }
 
     .home-navbar .dropdown-menu:before {

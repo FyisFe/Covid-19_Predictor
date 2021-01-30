@@ -46,6 +46,12 @@
     background-color: #171941;
   }
 
+  @media(max-width: 768px) {
+    .home{
+      font-size: 8.2px;
+    }
+  }
+
   .home .page-header {
     min-height: 100vh;
     position: relative;
