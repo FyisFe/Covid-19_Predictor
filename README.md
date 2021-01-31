@@ -36,6 +36,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 npm install
 ```
 
+## Makesure you installed dependency for following items
+```
+import sys
+import math
+import json
+import numpy as np
+from scipy.integrate import odeint
+```
 ## Run server
 
 ```
