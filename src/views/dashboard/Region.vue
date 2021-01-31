@@ -34,7 +34,8 @@
             <div class="d-flex align-items-center">
                 <button v-b-toggle.sidebar-controller :disabled='isRunning'
                     class="btn btn-editor btn-sm mr-3 d-md-block d-none"> <span class="mx-2">Editor</span></button>
-                <button class="btn btn-data-export btn-sm d-md-block d-none"> <span class="mx-2">Data
+                <button @click="downloadData" class="btn btn-data-export btn-sm d-md-block d-none"> <span
+                        class="mx-2">Data
                         Export</span></button>
             </div>
         </div>
@@ -49,7 +50,7 @@
                         <p class="mb-3 shade-color text-muted">
                             Get to know the overall trend during the period selected.
                         </p>
-                       <lineChart ref="lineChart"></lineChart>
+                        <lineChart ref="lineChart"></lineChart>
                     </div>
                 </div>
             </div>
@@ -96,7 +97,7 @@
                             <div>Day {{currentDay}}</div>
                         </h6>
                         <p class="mb-3 shade-color text-muted">
-                            Get to know the situation of recovered and dead people  
+                            Get to know the situation of recovered and dead people
                         </p>
                         <rvdChart ref="rvdChart">
                         </rvdChart>
@@ -110,7 +111,7 @@
                             <div>Hospitalizations per Day</div>
                         </h6>
                         <p class="text-center mb-3 shade-color text-muted">
-                            How many people are Hospitalized per day 
+                            How many people are Hospitalized per day
                         </p>
                         <gaugeChart ref="gaugeChart"></gaugeChart>
                     </div>
@@ -328,6 +329,30 @@
             },
             pauseRunning() {
                 this.isRunning = false
+            },
+            downloadData() {
+                let arr = []
+                for (let i = 0; i < this.rawData.length; i++) {
+                    arr.push(this.rawData[i])
+                }
+                let json = JSON.stringify(arr);
+                json = [json];
+                let blob1 = new Blob(json, {
+                    type: "text/plain;charset=utf-8"
+                });
+                var isIE = false || !!document.documentMode;
+                if (isIE) {
+                    window.navigator.msSaveBlob(blob1, "Export Data.txt");
+                } else {
+                    var url = window.URL || window.webkitURL;
+                    let link = url.createObjectURL(blob1);
+                    var a = document.createElement("a");
+                    a.download = "Customers.txt";
+                    a.href = link;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
             }
         },
         components: {
