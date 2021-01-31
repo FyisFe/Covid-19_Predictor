@@ -28,6 +28,8 @@
                     series: [{
                         animation: false,
                         type: 'gauge',
+                        min: '-1000',
+                        max: 5000,
                         progress: {
                             show: true,
                             width: 18
