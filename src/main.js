@@ -5,7 +5,9 @@ import './plugins/fontawesome'
 import './plugins/bootstrap-vue'
 import App from './app.vue'
 import router from './router'
+import axios from 'axios'
 
+Vue.prototype.axios = axios
 import jQuery from 'jquery'
 global.$ = jQuery
 Vue.config.productionTip = false
