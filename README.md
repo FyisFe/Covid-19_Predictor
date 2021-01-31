@@ -1,4 +1,4 @@
-# cityhack
+# Frontend
 
 ## Project setup
 ```
@@ -27,3 +27,17 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Backend server
+
+## Install dependency
+
+```
+npm install
+```
+
+## Run server
+
+```
+node app.js
+```
