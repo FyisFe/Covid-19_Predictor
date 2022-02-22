@@ -29,7 +29,7 @@ After the prediction, you can download the raw data derived by our model, and do
 
 ### How it works
 
-A modified SEIR Model Design is shown below: 
+A modified SEIR Model design, which integrates quarantine and vaccination factors, is shown below: 
 ![Model](./doc/images/Model.png)
 
 ### Parameters Meanings
